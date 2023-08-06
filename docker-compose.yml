@@ -3,7 +3,7 @@ services:
   vulnerability:
     build: ./vulnerability
     networks:
-      - app-network
+      - internal-network
   proxy:
     build: ./proxy
     ports:
@@ -11,7 +11,7 @@ services:
     depends_on:
       - vulnerability
     networks:
-      - app-network
+      - internal-network
 networks:
-  app-network:
+  internal-network:
     driver: bridge
