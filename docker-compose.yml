@@ -1,0 +1,17 @@
+version: '1.0'
+services:
+  vulnerability:
+    build: ./vulnerability
+    networks:
+      - app-network
+  proxy:
+    build: ./proxy
+    ports:
+      - '8080:8080'
+    depends_on:
+      - vulnerability
+    networks:
+      - app-network
+networks:
+  app-network:
+    driver: bridge
