@@ -22,7 +22,7 @@ subgraph Client
     Test[test.ts]
 end
 
-subgraph Docker Environment
+subgraph Example Challenge Instance
     subgraph Proxy Service
         DockerProxy[Dockerfile]
         ProxyCode[main.ts]
